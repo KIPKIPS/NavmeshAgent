@@ -7,7 +7,7 @@ public class OffMeshLinkController : MonoBehaviour {
     public Transform destination;
     public Vector3 targetPos;
     public NavMeshAgent nav;
-
+    public GameObject door;
     private IEnumerator ie;
     // Start is called before the first frame update
     void Start() {
@@ -24,7 +24,8 @@ public class OffMeshLinkController : MonoBehaviour {
     }
 
     IEnumerator OpenDoor() {
-        yield return new WaitForSeconds(8);
+        yield return new WaitForSeconds(6);
+        door.transform.RotateAround(new Vector3(-5.178f, 4.47f, 3.75f), Vector3.up, 90);
         Debug.Log("open");
         //若AI在开门之前就抵达门,则它的寻路目标需要重新设置
         nav.areaMask = nav.areaMask|1<<4;//将寻路的第四层(Door)添加到可以寻路的层里面
