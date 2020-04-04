@@ -13,7 +13,7 @@ NavMeshProjectSettings:
     cost: 2
   - name: Grass
     cost: 1
-  - name: 
+  - name: Door
     cost: 1
   - name: 
     cost: 1
